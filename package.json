@@ -8,6 +8,7 @@
     "clean": "rimraf dist/*",
     "serve": "npm run build && webpack-dev-server --content-base src/ --inline --hot --port 3000",
     "start": "npm run serve",
+    "stylelint": "stylelint src/**/*.css",
     "test": "mocha --require babel-register src/**/*.spec.js"
   },
   "author": "Sławomir Jopek",
