@@ -1,4 +1,5 @@
-var path = require('path');
+const path = require('path');
+const styleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
     entry: path.resolve(__dirname, 'src') + '/app/index.js',
@@ -19,5 +20,14 @@ module.exports = {
                 loader: 'style-loader!css-loader'
             }
         ]
-    }
+    },
+    plugins: [
+        new styleLintPlugin({
+          configFile: '.stylelintrc',
+          context: 'src',
+          files: '**/*.css',
+          failOnError: false,
+          quiet: false,
+        })
+    ]
 };
